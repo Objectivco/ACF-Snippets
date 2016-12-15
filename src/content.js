@@ -6,40 +6,19 @@ const createContentDir = () => {
     console.log('creating the files...');
 
     const dir = './partials/sections/content/';
+    const sassDir = './assets/styles/sections/';
 
     mkdirp.sync(dir);
-    fs.writeFileSync(dir + 'function.php', createFunctionFile());
-    console.log('creating function.php');
-    fs.writeFileSync(dir + 'item.php', createItemFile());
-    console.log('creating item.php');
+    const modulePath = path.resolve('');
+    const source = modulePath + '/snippets/acf/content';
+    const destination = dir;
 
-};
-
-const createFunctionFile = () => {
-    return '<?php \n' +
-    'return (object) array( \n' +
-    '    \'acf_name\' => \'content_section\', \n' +
-    '    \'options\' => (options) array( \n' +
-    '        \'func\' => function($padding_classes = \'\') { \n' +
-    '            $p_loc = FlexibleContentSectionUtility::getSectionsDirectory(); \n' +
-    '            $sb_loc = "$p_loc/content" \n' +
-    '            $item = "$sb_loc/item.php" \n' +
-    '            require($item) \n' +
-    '        } \n' +
-    '        \'has_padding\' => true \n' +
-    '    ) \n' +
-    ');';
-};
-
-const createItemFile = () => {
-    return '<?php \n' +
-    '$content = get_sub_field(\'content\'); \n' +
-    '?>\n' +
-    '<div class="content-section page-content-section <?php echo $padding_classes; ?>"> \n' +
-    '    <div class="wrap"> \n' +
-    '        <?php echo do_shortcode( $content ); ?> \n' +
-    '    </div> \n' +
-    '</div>';
+    ncp(source, destination, function (err) {
+        if (err) {
+            return console.error(err);
+        }
+        console.log('done!');
+    });
 };
 
 export default createContentDir;
