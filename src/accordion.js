@@ -16,6 +16,9 @@ const createAccordionDir = () => {
     console.log('creating item.php');
     fs.writeFileSync(sassDir + '_accordion.scss', createSassFile());
     console.log('creating _accordion.scss');
+
+    // append the Sass include to the bottom of style.scss
+    fs.appendFile('./assets/styles/style.scss', '@import "sections/accordion"; \r\n');
 };
 
 const createFunctionFile = () => {

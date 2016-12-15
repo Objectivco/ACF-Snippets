@@ -4,4 +4,4 @@ Starting points for working ACF's flexible content sections and the Exodus start
 | Command | Files Created    | Files Edited |
 | ------------ | ----------- | ------------- |
 | content      | function.php, item.php | |
-| accordion    | function.php, item.php, _accordion.scss | style.scss, sitewide.js |
+| accordion    | function.php, item.php, _accordion.scss | style.scss |

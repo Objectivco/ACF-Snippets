@@ -32,6 +32,9 @@ var createAccordionDir = function createAccordionDir() {
    console.log('creating item.php');
    _fs2.default.writeFileSync(sassDir + '_accordion.scss', createSassFile());
    console.log('creating _accordion.scss');
+
+   // append the Sass include to the bottom of style.scss
+   _fs2.default.appendFile('./assets/styles/style.scss', '@import "sections/accordion"; \r\n');
 };
 
 var createFunctionFile = function createFunctionFile() {
