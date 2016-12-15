@@ -23,7 +23,7 @@ commander
     .command('accordion')
     .action(function() {
         console.log(
-            chalk('Adding the accordion section')
+            chalk.green('Adding the accordion section')
         );
         createAccordionDir();
     });

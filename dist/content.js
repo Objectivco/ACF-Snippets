@@ -31,7 +31,7 @@ var createContentDir = function createContentDir() {
 };
 
 var createFunctionFile = function createFunctionFile() {
-    return '<?php \n' + 'return (object) array( \n' + '    \'acf_name\' => \'content_section\' \n' + '    \'options\' => (options) array( \n' + '        \'func\' => function($padding_classes = \'\') { \n' + '            $p_loc = FlexibleContentSectionUtility::getSectionsDirectory(); \n' + '            $sb_loc = "$p_loc/content" \n' + '            $item = "$sb_loc/item.php" \n' + '            require($item) \n' + '        } \n' + '        \'has_padding\' => true \n' + '    ) \n' + ');';
+    return '<?php \n' + 'return (object) array( \n' + '    \'acf_name\' => \'content_section\', \n' + '    \'options\' => (options) array( \n' + '        \'func\' => function($padding_classes = \'\') { \n' + '            $p_loc = FlexibleContentSectionUtility::getSectionsDirectory(); \n' + '            $sb_loc = "$p_loc/content" \n' + '            $item = "$sb_loc/item.php" \n' + '            require($item) \n' + '        } \n' + '        \'has_padding\' => true \n' + '    ) \n' + ');';
 };
 
 var createItemFile = function createItemFile() {
