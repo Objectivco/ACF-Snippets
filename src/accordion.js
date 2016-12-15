@@ -1,6 +1,8 @@
 import fs from 'fs';
 import mkdirp from 'mkdirp';
 import chalk from 'chalk';
+import path from 'path';
+const ncp = require('ncp').ncp;
 
 const createAccordionDir = () => {
     console.log('creating the files...');
