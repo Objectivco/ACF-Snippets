@@ -1,6 +1,9 @@
 # Exodus Starter Theme CLI
 Starting points for working ACF's flexible content sections and the Exodus starter theme.
 
+## Usage
+Main command is `exodus`. Below are the commands available to access the snippets. To copy a snippet directory into your theme folder, run `exodus <command>`.
+
 | Command | Files Created    | Files Edited | ACF Fields |
 | ------------ | ----------- | ------------- | ------------- |
 | content      | function.php, item.php | | content |
