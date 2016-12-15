@@ -1,31 +1,43 @@
 {
-    "name": "exoduscli",
-    "version": "1.0.0",
-    "description": "CLI tool for working with ACF's flexible sections on the Exodus starter theme.",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://wesleycole@github.com/Objectivco/ACF-Snippets.git"
-    },
-    "keywords": [
-        "Advanced Custom Fields",
-        "WordPress",
-        "Objectiv"
-    ],
-    "author": "Objectiv",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/Objectivco/ACF-Snippets/issues"
-    },
-    "homepage": "https://github.com/Objectivco/ACF-Snippets#readme",
-    "dependencies": {
-        "chalk": "^1.1.3",
-        "commander": "^2.9.0"
-    },
-    "bin": {
-        "exodus": "index.js"
-    }
+  "name": "exoduscli",
+  "version": "1.0.0",
+  "description": "CLI tool for working with ACF's flexible sections on the Exodus starter theme.",
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist && babel src -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://wesleycole@github.com/Objectivco/ACF-Snippets.git"
+  },
+  "keywords": [
+    "Advanced Custom Fields",
+    "WordPress",
+    "Objectiv"
+  ],
+  "author": "Objectiv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Objectivco/ACF-Snippets/issues"
+  },
+  "homepage": "https://github.com/Objectivco/ACF-Snippets#readme",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "commander": "^2.9.0",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.5.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "mocha": "^3.2.0"
+  },
+  "bin": {
+    "exodus": "./dist/index.js"
+  }
 }
