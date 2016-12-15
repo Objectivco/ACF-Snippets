@@ -6,6 +6,8 @@ import commander from 'commander';
 // Include the JS files
 import createContentDir from './content.js';
 import createAccordionDir from './accordion.js';
+import createTilesDir from './tiles.js';
+import createFiftyFiftyDir from './fiftyFifty.js';
 
 // Set up the CLI commands
 commander
@@ -34,6 +36,7 @@ commander
         console.log(
             chalk.green('Adding tiles flexible section')
         );
+        createTilesDir();
     });
 
 commander
@@ -42,6 +45,7 @@ commander
         console.log(
             chalk('Adding the fifty-fifty section')
         );
+        createFiftyFiftyDir();
     });
 
 
