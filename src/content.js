@@ -10,6 +10,8 @@ const createContentDir = () => {
     mkdirp.sync(dir);
     fs.writeFileSync(dir + 'function.php', createFunctionFile());
     fs.writeFileSync(dir + 'item.php', createItemFile());
+    fs.writeFileSync(sassDir + '_content.scss', createSassFile());
+
 };
 
 const createFunctionFile = () => {
