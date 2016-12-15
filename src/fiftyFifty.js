@@ -7,12 +7,13 @@ const ncp = require('ncp').ncp;
 const createFiftyFiftyDir = () => {
     console.log('creating the files...');
 
+    const dir = './partials/sections/fifty-fifty/';
     const sassDir = './assets/styles/sections/';
 
     mkdirp.sync(dir);
     const modulePath = path.resolve('');
     const source = modulePath + '/snippets/acf/fify-fifty';
-    const destination = './partials/sections/fifty-fifty';
+    const destination = dir;
 
     ncp(source, destination, function (err) {
         if (err) {
