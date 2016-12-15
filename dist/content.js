@@ -19,7 +19,21 @@ var _chalk2 = _interopRequireDefault(_chalk);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var createContentDir = function createContentDir() {
-    console.log('adding the directory');
+    console.log('creating the files...');
+
+    var dir = './partials/sections/content/';
+
+    _mkdirp2.default.sync(dir);
+    _fs2.default.writeFileSync(dir + 'function.php', createFunctionFile());
+    _fs2.default.writeFileSync(dir + 'item.php', createItemFile());
+};
+
+var createFunctionFile = function createFunctionFile() {
+    return '<?php \n' + 'return (object) array( \n' + '    \'acf_name\' => \'content_section\' \n' + '    \'options\' => (options) array( \n' + '        \'func\' => function($padding_classes = \'\') { \n' + '            $p_loc = FlexibleContentSectionUtility::getSectionsDirectory(); \n' + '            $sb_loc = "$p_loc/content" \n' + '            $item = "$sb_loc/item.php" \n' + '            require($item) \n' + '        } \n' + '        \'has_padding\' => true \n' + '    ) \n' + ');';
+};
+
+var createItemFile = function createItemFile() {
+    return '<?php \n' + '$content = get_sub_field(\'content\'); \n' + '?>\n' + '<div class="content-section page-content-section <?php echo $padding_classes; ?>"> \n' + '    <div class="wrap"> \n' + '        <?php echo do_shortcode( $content ); ?> \n' + '    </div> \n' + '</div>';
 };
 
 exports.default = createContentDir;
