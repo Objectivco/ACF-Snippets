@@ -9,15 +9,16 @@ const createContentDir = () => {
 
     mkdirp.sync(dir);
     fs.writeFileSync(dir + 'function.php', createFunctionFile());
+    console.log('creating function.php');
     fs.writeFileSync(dir + 'item.php', createItemFile());
-    fs.writeFileSync(sassDir + '_content.scss', createSassFile());
+    console.log('creating item.php');
 
 };
 
 const createFunctionFile = () => {
     return '<?php \n' +
     'return (object) array( \n' +
-    '    \'acf_name\' => \'content_section\' \n' +
+    '    \'acf_name\' => \'content_section\', \n' +
     '    \'options\' => (options) array( \n' +
     '        \'func\' => function($padding_classes = \'\') { \n' +
     '            $p_loc = FlexibleContentSectionUtility::getSectionsDirectory(); \n' +

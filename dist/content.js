@@ -25,7 +25,9 @@ var createContentDir = function createContentDir() {
 
     _mkdirp2.default.sync(dir);
     _fs2.default.writeFileSync(dir + 'function.php', createFunctionFile());
+    console.log('creating function.php');
     _fs2.default.writeFileSync(dir + 'item.php', createItemFile());
+    console.log('creating item.php');
 };
 
 var createFunctionFile = function createFunctionFile() {
