@@ -12,7 +12,7 @@ const createFiftyFiftyDir = () => {
 
     mkdirp.sync(dir);
     const modulePath = path.resolve('');
-    const source = modulePath + '/snippets/acf/fify-fifty';
+    const source = modulePath + '/snippets/acf/fifty-fifty';
     const destination = dir;
 
     ncp(source, destination, function (err) {
