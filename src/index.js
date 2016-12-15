@@ -5,6 +5,7 @@ import commander from 'commander';
 
 // Include the JS files
 import createContentDir from './content.js';
+import createAccordionDir from './accordion.js';
 
 // Set up the CLI commands
 commander
@@ -19,18 +20,19 @@ commander
     });
 
 commander
-    .command('tiles')
-    .action(function() {
-        console.log(
-            chalk.green('Adding tiles flexible section')
-        );
-    });
-
-commander
     .command('accordion')
     .action(function() {
         console.log(
             chalk('Adding the accordion section')
+        );
+        createAccordionDir();
+    });
+
+commander
+    .command('tiles')
+    .action(function() {
+        console.log(
+            chalk.green('Adding tiles flexible section')
         );
     });
 
