@@ -1,4 +1,4 @@
-<section class="page-flexible-section tiles <?php echo $padding_classes; ?>">
+<section class="tiles-section page-flexible-section <?php echo $padding_classes; ?>">
 	<?php if ( have_rows( 'page_tiles' ) ): ?>
 		<div class="tile-blocks">
 			<?php while( have_rows( 'page_tiles' ) ): the_row(); ?>
