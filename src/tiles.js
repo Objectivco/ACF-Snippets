@@ -12,8 +12,8 @@ const createTilesDir = () => {
 
     mkdirp.sync(dir);
     const modulePath = path.resolve('');
-    const source = modulePath + '/snippets/tiles';
-    const destination = './partials/sections/tiles';
+    const source = modulePath + '/snippets/acf/tiles';
+    const destination = dir;
 
     ncp(source, destination, function (err) {
         if (err) {

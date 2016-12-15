@@ -43,7 +43,7 @@ commander
     .command('fifty-fifty')
     .action(function() {
         console.log(
-            chalk('Adding the fifty-fifty section')
+            chalk.green('Adding the fifty-fifty section')
         );
         createFiftyFiftyDir();
     });
